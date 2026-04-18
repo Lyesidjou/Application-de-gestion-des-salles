@@ -1,5 +1,6 @@
 import json
 import mysql.connector
+from Models.salle import Salle
 
 class DataSalle:
     def get_connection(self):
@@ -12,5 +13,20 @@ class DataSalle:
                 database=config["database"],
             )
             return connexion
+
+    def insert_salle(self,salle):
+        con= self.get_connection()
+        crs= con.cursor()
+        crs.execute(
+            "INSERT INTO salle (code,description,categorie,capacite) VALUES (%s,%s,%s,%s)",
+            (salle.code,salle.description,salle.categorie,salle.capacite)
+        )
+        con.commit()
+        crs.close()
+        con.close()
+
+
+
+
 
 
