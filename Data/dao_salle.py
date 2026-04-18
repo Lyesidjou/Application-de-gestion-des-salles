@@ -47,6 +47,19 @@ class DataSalle:
         crs.close()
         con.close()
 
+    def get_salle(self,code):
+        con= self.get_connection()
+        crs= con.cursor()
+        crs.execute(
+            "SELECT * FROM salle WHERE code=%s",
+            (code,)
+        )
+        salle = crs.fetchone()
+        crs.close()
+        con.close()
+        return salle
+
+
 
 
 
