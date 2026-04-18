@@ -59,6 +59,19 @@ class DataSalle:
         con.close()
         return salle
 
+    def get_salles(self):
+        con= self.get_connection()
+        crs= con.cursor()
+        crs.execute(
+            "SELECT * FROM salle ORDER BY code"
+        )
+        salles = crs.fetchall()
+        crs.close()
+        con.close()
+        return salles
+
+
+
 
 
 
