@@ -1,6 +1,8 @@
 from Data.dao_salle import DataSalle
 from Data.dao_salle import Salle
 from Services.service_salle import ServiceSalle
+from Views.view_salle import ViewSalle
+
 
 
 con= DataSalle().get_connection()
@@ -39,8 +41,11 @@ S4.category="PRESENTATION"
 S4.capacite=30
 ServiceSalle().modifier_salle(S4)
 
-ServiceSalle().supprimer_salle(S3)
+ServiceSalle().supprimer_salle("VVS4")
 
 salle=ServiceSalle().rechercher_salle("GF987")
 print(salle)
+
+app=ViewSalle()
+app.mainloop()
 
