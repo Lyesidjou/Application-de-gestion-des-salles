@@ -18,6 +18,19 @@ class ServiceSalle:
         print("toutes les conditions sont respectés et la salle vient d'etre ajouter")
         return True
 
+    def modifier_salle(self,salle):
+        if not salle.code or not salle.description or not salle.categorie or not salle.capacite:
+            print("toutes les données de la salle doivent etre presente")
+            return False
+        if salle.capacite < 1:
+            print("la capacité de la salle est strictement supérieure ou égale à 1")
+            return False
+        self.dao_salle.update_salle(salle)
+        print("toutes les conditions sont respectés les informations de la salle sont modifier")
+        return True
+
+
+
 
 
 
