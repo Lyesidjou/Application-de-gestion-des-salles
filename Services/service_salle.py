@@ -29,6 +29,10 @@ class ServiceSalle:
         print("toutes les conditions sont respectés les informations de la salle sont modifier")
         return True
 
+    def  supprimer_salle(self,code):
+        self.dao_salle.delete_salle(code)
+        print("salle supprimé")
+
 
 
 
