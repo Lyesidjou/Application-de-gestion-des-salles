@@ -40,6 +40,12 @@ class ServiceSalle:
             return None
         return salle
 
+    def recuperer_salles(self):
+        salles=self.dao_salle.get_salles()
+        return salles
+
+
+
 
 
 
