@@ -13,3 +13,8 @@ DataSalle().insert_salle(S1)
 DataSalle().insert_salle(S2)
 DataSalle().insert_salle(S3)
 DataSalle().delete_salle("BK098")
+
+S2.description="Petite"
+S2.categorie="MATH"
+S2.capacite=35
+DataSalle().update_salle(S2)
