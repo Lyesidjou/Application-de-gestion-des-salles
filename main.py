@@ -18,3 +18,6 @@ S2.description="Petite"
 S2.categorie="MATH"
 S2.capacite=35
 DataSalle().update_salle(S2)
+
+salle=DataSalle().get_salle("VVS4")
+print(salle)
