@@ -1,6 +1,8 @@
 import customtkinter as ctk
 from Services.service_salle import ServiceSalle
 from Models.salle import Salle
+from main import salle
+
 
 class ViewSalle(ctk.CTk):
     def __init__(self):
@@ -69,5 +71,17 @@ class ViewSalle(ctk.CTk):
     def supprimer_salle(self):
         code=self.entry_code.get()
         self.service_salle.supprimer_salle(code)
+
+    def rechercher_salle(self):
+        code=self.entry_code.get()
+        self.service_salle.rechercher_salle(code)
+        if salle:
+            self.entry_description.delete(0,"end")
+            self.entry_description.insert(0, salle.description)
+            self.entry_categorie.delete(0,"end")
+            self.entry_categorie.insert(0, salle.categorie)
+            self.entry_capacite.delete(0,"end")
+            self.entry_capacite.insert(0, salle.capacite)
+
 
 
