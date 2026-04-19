@@ -33,6 +33,14 @@ class ServiceSalle:
         self.dao_salle.delete_salle(code)
         print("salle supprimé")
 
+    def  rechercher_salle(self,code):
+        salle=self.dao_salle.get_salle(code)
+        if salle is None:
+            print("il n'existe presentement aucune salle sous ce code")
+            return None
+        return salle
+
+
 
 
 
