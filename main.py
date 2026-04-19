@@ -30,3 +30,17 @@ for i in salles:
 salles=ServiceSalle().recuperer_salles()
 for i in salles:
     print(i)
+
+S4=Salle("NM78","Grande","RÉUNION",80)
+ServiceSalle().ajouter_salle(S4)
+
+S4.description="Petite"
+S4.category="PRESENTATION"
+S4.capacite=30
+ServiceSalle().modifier_salle(S4)
+
+ServiceSalle().supprimer_salle(S3)
+
+salle=ServiceSalle().rechercher_salle("GF987")
+print(salle)
+
