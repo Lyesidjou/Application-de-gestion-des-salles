@@ -57,7 +57,9 @@ class DataSalle:
         salle = crs.fetchone()
         crs.close()
         con.close()
-        return salle
+        if salle:
+            return Salle(salle[0], salle[1], salle[2], salle[3])
+        return None
 
     def get_salles(self):
         con= self.get_connection()
@@ -66,9 +68,13 @@ class DataSalle:
             "SELECT * FROM salle ORDER BY code"
         )
         salles = crs.fetchall()
+        liste = []
+        for s in salles:
+            liste.append(Salle(s[0], s[1], s[2], s[3]))
         crs.close()
         con.close()
-        return salles
+        return liste
+
 
 
 
