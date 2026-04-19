@@ -32,4 +32,19 @@ class ViewSalle(ctk.CTk):
         self.entry_capacite=ctk.CTkEntry(self.frame,placeholder_text="capacite")
         self.entry_capacite.grid(row=3,column=1,padx=5,pady=5)
 
+        self.frame_action=ctk.CTkFrame(self)
+        self.frame_action.pack(padx=5,pady=5,fill='x')
+
+        self.btn_Ajouter=ctk.CTkButton(self.frame_action,text="Ajouter")
+        self.btn_Ajouter.grid(row=0,column=0,padx=5,pady=5)
+
+        self.btn_Modifier=ctk.CTkButton(self.frame_action,text="Modifier")
+        self.btn_Modifier.grid(row=0,column=1,padx=5,pady=5)
+
+        self.btn_Supprimer=ctk.CTkButton(self.frame_action,text="Supprimer")
+        self.btn_Supprimer.grid(row=0,column=2,padx=5,pady=5)
+
+        self.btn_Rechercher=ctk.CTkButton(self.frame_action,text="Rechercher")
+        self.btn_Rechercher.grid(row=0,column=3,padx=5,pady=5)
+
 
