@@ -8,3 +8,28 @@ class ViewSalle(ctk.CTk):
         self.title("Gestion des salles")
         self.geometry("900x500")
         ctk.set_appearance_mode("light")
+
+        self.frame=ctk.CTkFrame(self)
+        self.frame.pack(padx=5, pady=5,fill='x')
+
+        self.label_code=ctk.CTkLabel(self.frame,text="Code")
+        self.label_code.grid(row=0,column=0,padx=5,pady=5,sticky="w")
+        self.entry_code=ctk.CTkEntry(self.frame, placeholder_text="code")
+        self.entry_code.grid(row=0,column=1,padx=5,pady=5)
+
+        self.label_description=ctk.CTkLabel(self.frame,text="Description")
+        self.label_description.grid(row=1,column=0,padx=5,pady=5,sticky="w")
+        self.entry_description=ctk.CTkEntry(self.frame,placeholder_text="description")
+        self.entry_description.grid(row=1,column=1,padx=5,pady=5)
+
+        self.label_categorie=ctk.CTkLabel(self.frame,text="Categorie")
+        self.label_categorie.grid(row=2,column=0,padx=5,pady=5,sticky="w")
+        self.entry_categorie=ctk.CTkEntry(self.frame,placeholder_text="categorie")
+        self.entry_categorie.grid(row=2,column=1,padx=5,pady=5)
+
+        self.label_capacite=ctk.CTkLabel(self.frame,text="Capacite")
+        self.label_capacite.grid(row=3,column=0,padx=5,pady=5,sticky="w")
+        self.entry_capacite=ctk.CTkEntry(self.frame,placeholder_text="capacite")
+        self.entry_capacite.grid(row=3,column=1,padx=5,pady=5)
+
+
