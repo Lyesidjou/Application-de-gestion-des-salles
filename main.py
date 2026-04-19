@@ -1,5 +1,6 @@
 from Data.dao_salle import DataSalle
 from Data.dao_salle import Salle
+from Services.service_salle import ServiceSalle
 
 
 con= DataSalle().get_connection()
@@ -23,5 +24,9 @@ salle=DataSalle().get_salle("VVS4")
 print(salle)
 
 salles=DataSalle().get_salles()
+for i in salles:
+    print(i)
+
+salles=ServiceSalle().recuperer_salles()
 for i in salles:
     print(i)
