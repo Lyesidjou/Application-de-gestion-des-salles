@@ -1,7 +1,8 @@
 import customtkinter as ctk
 from Services.service_salle import ServiceSalle
 from Models.salle import Salle
-from main import salle
+from tkinter import ttk
+
 
 
 class ViewSalle(ctk.CTk):
@@ -49,7 +50,7 @@ class ViewSalle(ctk.CTk):
 
 
 
-        self.btn_Rechercher=ctk.CTkButton(self.frame_action,text="Rechercher")
+        self.btn_Rechercher=ctk.CTkButton(self.frame_action,text="Rechercher", command=self.rechercher_salle)
         self.btn_Rechercher.grid(row=0,column=3,padx=5,pady=5)
 
     def ajouter_salle(self ):
@@ -74,7 +75,7 @@ class ViewSalle(ctk.CTk):
 
     def rechercher_salle(self):
         code=self.entry_code.get()
-        self.service_salle.rechercher_salle(code)
+        salle=self.service_salle.rechercher_salle(code)
         if salle:
             self.entry_description.delete(0,"end")
             self.entry_description.insert(0, salle.description)
@@ -82,6 +83,23 @@ class ViewSalle(ctk.CTk):
             self.entry_categorie.insert(0, salle.categorie)
             self.entry_capacite.delete(0,"end")
             self.entry_capacite.insert(0, salle.capacite)
+
+            self.cadreList=ctk.CTkFrame(self,corner_radius=10,width=400)
+            self.cadreList.pack(padx=10,pady=10)
+
+            self.treeList=ttk.Treeview(self.cadreList,columns=("code","Description","Categorie","Capacite"),show="headings")
+
+            self.treeList.heading("code",text="Code")
+            self.treeList.heading("Description",text="Description")
+            self.treeList.heading("Categorie",text="Categorie")
+            self.treeList.heading("Capacite",text="Capacite")
+
+            self.treeList.column("code",width=50)
+            self.treeList.column("Description",width=150)
+            self.treeList.column("Categorie",width=100)
+            self.treeList.column("Capacite",width=100)
+
+            self.treeList.pack(expand=True,fill="both",padx=10,pady=10)
 
 
 
