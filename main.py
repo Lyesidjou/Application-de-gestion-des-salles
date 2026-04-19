@@ -21,3 +21,7 @@ DataSalle().update_salle(S2)
 
 salle=DataSalle().get_salle("VVS4")
 print(salle)
+
+salles=DataSalle().get_salles()
+for i in salles:
+    print(i)
